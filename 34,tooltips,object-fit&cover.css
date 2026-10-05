@@ -1,0 +1,67 @@
+/*tooltip*/
+/*
+A CSS tooltip is used to specify extra information about something when the user moves the mouse pointer over an element:
+The tooltip text is specified in the title attribute of an element:
+*/
+/*
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+  cursor: pointer;
+}
+
+.tooltiptext {
+  visibility: hidden;
+  width: 130px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+</style>
+<body>
+
+<h2>Basic CSS Tooltip Code</h2>
+
+<p>Move the mouse over the text below:</p>
+
+<div class="tooltip">Hover over me
+  <span class="tooltiptext">Some tooltip text</span>
+</div>
+
+This example demonstrates how to add an arrow to the bottom of the tooltip:
+
+.tooltiptext::after {
+  content: " ";
+  position: absolute;
+  top: 100%; /* At the bottom of the tooltip 
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: black transparent transparent transparent;
+}
+
+/*OBJECT-FIT
+
+The CSS object-fit property is used to specify how an <img> or <video> should be resized to fit its container.
+
+This property can take one of the following values:
+
+fill - This is default. Does not preserve the aspect ratio. The image is resized to fill the container (the image will be stretched or squeezed to fit).
+cover - Preserves the aspect ratio, and the image fills the container. Cuts overflowing content if needed.
+contain - Preserves the aspect ratio, and fits the image inside the container, without cutting - leaves empty space if needed.
+none - The image is not resized.
+scale-down - the image is scaled down to the smallest version of none or contain.
+
+
+OBJECT-COVER
+

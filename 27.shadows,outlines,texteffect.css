@@ -1,0 +1,48 @@
+/*TEXT SHADOW 
+
+text-shadow: offsetX offsetY blurRadius color;
+
+Horizontal and vertical shadow, with color and blur effect:
+h1 {
+  text-shadow: 2px 2px 5px red;
+}
+
+BOX SHADOW
+
+box-shadow: offsetX offsetY blurRadius spreadRadius color;
+
+Horizontal and vertical shadow, with color, blur effect, and spread effect:
+div {
+  box-shadow: 10px 10px 5px 12px lightblue;
+}
+
+OUTLINES
+
+outline: width style color;
+
+outline: 3px dashed black;
+outline-offset: 5px;
+
+TEXT EFFECTS
+
+1-
+text-overflow: clip | ellipsis ;
+
+Both of the following properties are required for text-overflow to take effect:
+white-space: nowrap;
+overflow: hidden;
+
+2-
+word-wrap:break;
+
+allows long words to be able to be broken and wrap onto the next line. 
+
+3-
+word-break: normal | break-all | keep-all;
+
+word-break property specifies how words should break when reaching the end of a line.
+
+4-
+text-transform: uppercase | lowercase | capitalize | none;
+
+

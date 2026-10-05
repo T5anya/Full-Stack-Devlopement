@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .main{
+            width: 100vw;
+            height: 100vh;
+            background-color: rgb(57, 56, 56);
+            border-radius: 8px;
+        }
+        .text{
+            color: #f1efef;
+            text-align: center;
+            padding: 16px;
+            font-size: 4.3vh;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .grid{
+            display: grid;
+            background-color: rgb(249, 229, 205);
+            width: 68vw;
+            height: 76vh;
+            margin: 40px 240px;
+            padding: 20px 20px;
+            border-radius: 25px;
+            grid-template-columns: repeat(4,1fr);
+            grid-template-rows: repeat(2,1fr);
+            grid-template-areas: 
+            " first-top first-top center-top top-right"
+            " first-bottom center-bottom bottom-right bottom-right";
+            gap: 20px;
+        }
+        .first-top{
+            grid-area: first-top;
+            border-radius: 15px;
+            padding-left: -10px;
+            position: relative;
+
+        }
+        .first-top  img{
+            width: 100%;
+            height: 100%;
+            border-radius: 15px;
+            background-position: center;
+            background-size: cover;
+            position: absolute;
+            }
+        .first{
+            color: white;
+            font-size: 4vh;
+            padding: 20px 30px;
+            position: absolute;
+            margin-top: 20px;
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+        .f-2{
+            font-size: 4vh;
+            padding: 20px 30px;
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            color: white;
+            text-align: left;
+            position: absolute;
+            margin-top: 80px;
+        }
+        .btn{
+            padding: 10px 10px;
+            font-size: 2.1vh;
+            margin-left: 30px;
+            border-radius: 8px;
+            border: none;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
+            background-color: rgb(255, 255, 255);
+            cursor: pointer;
+            margin-top: 10px;
+            position: absolute;
+            margin-top: 200px;
+        }
+        .btn:hover{
+            background-color: rgb(8, 8, 8);
+            color: #efeaea;}
+
+        .center-top{
+            grid-area: center-top;
+            border-radius: 15px;
+            padding-left: -10px;
+            background-size: contain;
+            position: relative;
+        }
+        .center-top  img{
+            width: 100%;
+            height: 100%;
+            border-radius: 15px;
+            background-position: center;
+            background-size: cover;
+            position: absolute;
+            }
+
+        .f2{
+            color: white;
+            font-size: 3vh;
+            padding: 20px 30px;
+            position: absolute;
+            margin-top: 20px;
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+        .f21{
+            font-size: 2.6vh;
+            padding: 20px 30px;
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            color: white;
+            text-align: left;
+            position: absolute;
+            margin-top: 80px;
+        }
+        .top-right{
+
+            grid-area: top-right;
+            border-radius: 15px;
+            padding-left: -10px;
+            background-size: cover;
+            position: relative;
+        }
+
+        .top-right img{
+            width: 100%;
+            height: 100%;
+            border-radius: 15px;
+            background-position: center;
+            background-size: cover;
+            position: absolute;
+            }
+
+        .f3{
+            color: white;
+            font-size: 3vh;
+            padding: 20px 30px;
+            position: absolute;
+            margin-top: 20px;
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+        .f31{
+            font-size: 2.6vh;
+            padding: 20px 30px;
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            color: white;
+            text-align: left;
+            position: absolute;
+            margin-top: 80px;
+        }
+        .first-bottom{
+            grid-area: first-bottom;
+            border-radius: 15px;
+            padding-left: -10px;
+            background-size: cover;
+            position: relative;
+        }
+        .first-bottom img{
+            width: 100%;
+            height: 100%;
+            border-radius: 15px;
+            background-position: center;
+            background-size: cover;
+            position: absolute;
+            }
+
+        .f4{
+            color: white;
+            font-size: 3vh;
+            padding: 20px 30px;
+            position: absolute;
+            margin-top: 20px;
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+        .f41{
+            font-size: 2.6vh;
+            padding: 20px 30px;
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            color: white;
+            text-align: left;
+            position: absolute;
+            margin-top: 80px;
+        }
+        .center-bottom{
+            grid-area: center-bottom;
+            border-radius: 15px;
+            padding-left: -10px;
+            background-size: contain;
+            position: relative;
+        }
+        .center-bottom img{
+            width: 100%;
+            height: 100%;
+            border-radius: 15px;
+            background-position: center;
+            background-size: cover;
+            position: absolute;
+            }
+
+        .f5{
+            color: white;
+            font-size: 3vh;
+            padding: 20px 30px;
+            position: absolute;
+            margin-top: 20px;
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+        .f51{
+            font-size: 2.6vh;
+            padding: 20px 30px;
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            color: white;
+            text-align: left;
+            position: absolute;
+            margin-top: 80px;
+        }
+        .bottom-right{
+            grid-area:bottom-right ;
+            border-radius: 15px;
+            padding-left: -10px;
+            background-size: cover;
+            position: relative;
+        }
+        .bottom-right img{
+            width: 100%;
+            height: 100%;
+            border-radius: 15px;
+            background-position: center;
+            background-size: cover;
+            position: absolute;
+            }
+
+        .f6{
+            color: white;
+            font-size: 3vh;
+            padding: 20px 30px;
+            position: absolute;
+            margin-top: 20px;
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+        .f61{
+            font-size: 2.6vh;
+            padding: 20px 30px;
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            color: white;
+            text-align: left;
+            position: absolute;
+            margin-top: 80px;
+        }
+</style>
+</head>
+<body>
+    <div class="main">
+        <div class="text">
+            <h1>GRID PROPERTY</h1>
+        </div>
+        <div class="grid">
+            <div class="first-top">
+                <img src="first.jpg" alt="" >
+                <p class="first">
+                    FOOD
+                    <p class="f-2">
+                        WAKE UP AND 
+                        <br>
+                        SMELL THE COFFEE
+                    </p>
+                    <button class="btn">LEARN MORE</button>
+                </p>
+            </div>
+            <div class="center-top">
+                <img src="third.jpg" alt="" >
+                <p class="f2">
+                    Makeup
+                    <p class="f21">
+                        The Brand New
+                        <br>
+                       Makeup Hall
+                    </p>
+                    <button class="btn">LEARN MORE</button>
+                </p>
+            </div>
+            <div class="top-right">
+                <img src="tech.jpg" alt="" >
+                <p class="f3">
+                    Tech
+                    <p class="f31">
+                        Latest high-tech 
+                        <br>
+                       keyboard models
+                    </p>
+                    <button class="btn">LEARN MORE</button>
+                </p>
+            </div>
+            <div class="first-bottom">
+               <img src="fifth.jpg" alt="" >
+                <p class="f4">
+                    eco
+                    <p class="f41">
+                        purify the air
+                        <br>
+                       in ur home
+                    </p>
+                    <button class="btn">LEARN MORE</button>
+                </p>
+            </div>
+            <div class="center-bottom">
+               <img src="4.jpg" alt="" >
+                <p class="f5">
+                    health
+                    <p class="f51">
+                        experience the
+                        <br>
+                       fludity of gel
+                    </p>
+                    <button class="btn">LEARN MORE</button>
+                </p>
+            </div>
+            <div class="bottom-right">
+                <img src="second.jpg" alt="" >
+                <p class="f6">
+                    social
+                    <p class="f61">
+                        shooting minimal
+                        <br>
+                       instagram photos
+                    </p>
+                    <button class="btn">LEARN MORE</button>
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

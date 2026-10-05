@@ -1,0 +1,22 @@
+/*CSS
+
+
+The main objective of CSS to add styles to HTML. CSS describes how HTML elements 
+are displayed on a page. 
+ Styling includes colors, fonts, size, borders etc 
+ We can define CSS styling inside HTML. But it is highly recommended to define styling 
+inside a seperate CSS file(.css extension) and link that file to HTML
+
+Example:
+p {
+  color: red;
+  text-align: center;
+}*/
+
+/*COMMENTS*/
+
+/* This is a single-line comment */
+
+
+
+

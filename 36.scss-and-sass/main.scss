@@ -1,0 +1,106 @@
+@import url(https://fonts.googleapis.com/css?family=Pacifico);
+/*Add variables here:*/
+
+h1 {
+  font-family: Roboto, sans-serif;
+  text-align: center;
+}
+
+.banner {
+  font-family: 'Pacifico', cursive;
+  height: 400px;
+  background-image: url("lemonade.jpg");
+}
+
+.container {
+  text-align: center;
+  font-family: 'Pacifico', cursive;
+}
+
+$primary-color: #ff5722;
+
+button {
+  background: $primary-color;
+}
+
+.card {
+  border-color: $primary-color;
+}
+
+#sidebar {
+    float:left;
+    width:25%;
+    background-color:lightblue;
+    padding: 30px 10px;
+    
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+    
+    li {
+        padding: 6px;
+        margin-bottom: 10px;
+        background-color: #10A2FF;
+        color: #ffffff;
+
+        a {
+      text-decoration: none;
+      color: #707070;
+
+         &:hover {
+        color: #069c54;
+                }
+        }
+    }
+}
+
+%box {
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.card {
+  @extend %box;
+  background: white;
+}
+
+.modal {
+  @extend %box;
+  background: gray;
+}
+
+@mixin theme($theme: DarkGray) {
+  background: $theme;
+  box-shadow: 0 0 1px rgba($theme, .25);
+  color: #fff;
+}
+
+.info {
+  @include theme;
+}
+.alert {
+  @include theme($theme: DarkRed);
+}
+.success {
+  @include theme($theme: DarkGreen);
+}
+
+$theme: dark;
+
+body {
+  @if $theme == dark {
+    background: black;
+    color: white;
+  } @else {
+    background: white;
+    color: black;
+  }
+}
+
+@for $i from 1 through 3 {
+  .m-#{$i} {
+    margin: #{$i}rem;
+  }
+}

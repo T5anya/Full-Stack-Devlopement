@@ -1,0 +1,125 @@
+/*STYLING TABLES*/
+
+
+/*
+1.Borders
+The CSS border property is used to specify the width, style, and color of table borders.
+
+The border property is a shorthand property for:
+
+border-width - sets the width of the border
+border-style - sets the style of the border (required)
+border-color - sets the color of the border
+*/
+table, th, td {
+  border: 1px solid green;
+}
+
+/*
+ Border-Spacing: It sets the distance between the borders of 
+adjacent cells.
+border-spacing: value;
+
+• Border-Collapse: It sets whether table borders should 
+collapse into a single border or be separated.
+border-collapse: collapse/separate;
+separate - Default value. Borders are separated; each cell will display its own borders
+collapse - Borders are collapsed into a single border when possible
+
+*/
+ table.one {
+        border-collapse: separate;
+        border-spacing: 10px;
+    }
+table.two {
+        border-collapse: separate;
+        border-spacing: 10px 30px;
+}
+
+/*
+Horizontal Alignment-
+The CSS text-align property is used to set the horizontal alignment of the content in <th> or <td>.
+
+This property can have one of the following values:
+
+left - Aligns the text to the left
+right - Aligns the text to the right
+center - Centers the text
+
+Vertical Alignment-
+The CSS vertical-align property sets the vertical alignment (like top, bottom, or middle) of the content in <th> or <td>.
+Note: By default, the vertical alignment of the content in a table is middle (for both <th> and <td> elements).
+
+Caption Side-
+Caption Side property specifies the placement of the table caption relative to the table.
+
+Syntax:
+caption-side: top/bottom;
+
+Empty cells
+Empty cells property specifies whether or not to display borders and background on empty cells in a table.
+
+Syntax:
+empty-cells:show/hide;
+
+Table layout
+The Table layout property is used to set up the layout algorithm used for the table.
+
+Syntax:
+table-layout:auto/fixed;
+
+
+/* STYLING LISTS*/
+
+/* List-item Markers
+The CSS list-style-type property specifies the type of list-item marker in a list.
+The following example shows some of the available list-item markers:
+*/
+ul.a {list-style-type: circle;}
+ul.b {list-style-type: disc;}
+ul.c {list-style-type: square;}
+
+ol.d {list-style-type: upper-roman;}
+ol.e {list-style-type: lower-roman;}
+ol.f {list-style-type: lower-alpha;}
+ol.g {list-style-type: decimal;}
+
+/* List-item Marker with an Image
+The CSS list-style-image property is used to replace the list-item marker with an image.
+
+Note: Always specify a list-style-type property in addition. This property is used if the image for 
+some reason is unavailable.
+*/
+ul {
+  list-style-image: url('sqpurple.gif');
+  list-style-type: square;
+}
+
+/* STYLING LINKS-
+Four states of links:
+
+a:link: This is a normal, unvisited link.
+a:visited: This is a link visited by user at least once
+a:hover : This is a link when mouse hovers over it
+a:active: This is a link that is just clicked.
+
+*/
+/* unvisited link */
+a:link {
+  color: red;
+}
+
+/* visited link */
+a:visited {
+  color: green;
+}
+
+/* mouse over link */
+a:hover {
+  color: hotpink;
+}
+
+/* selected link */
+a:active {
+  color: blue;
+}

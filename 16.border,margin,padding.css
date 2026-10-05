@@ -1,0 +1,156 @@
+/*BORDER*/
+
+/*
+1.Border Style
+*/
+
+p.dotted {
+            border-style: dotted;
+        }
+p.dashed {
+            border-style: dashed;
+        }
+/*
+ Border Style
+The border-style property specifies what kind of border to display.
+
+The following values are allowed:
+
+dotted - Defines a dotted border
+dashed - Defines a dashed border
+solid - Defines a solid border
+double - Defines a double border
+groove - Defines a 3D grooved border. The effect depends on the border-color value
+ridge - Defines a 3D ridged border. The effect depends on the border-color value
+inset - Defines a 3D inset border. The effect depends on the border-color value
+outset - Defines a 3D outset border. The effect depends on the border-color value
+none - Defines no border
+hidden - Defines a hidden border
+The border-style property can have from one to four values (for the top border, right border, bottom border,
+ and the left border).
+ */
+
+/* 
+2. Border Width
+
+The border-width property specifies the width of the four borders.
+
+The width can be set as a specific size (in px, pt, cm, em, etc) or by using one of the three pre-defined values: 
+thin, medium, or thick:
+*/
+
+p.one {
+  border-style: solid;
+  border-width: 5px;
+}
+
+p.two {
+  border-style: solid;
+  border-width: medium;
+}
+p.three {
+  border-style: solid;
+  border-width: 25px 10px 4px 35px; /* 25px top, 10px right, 4px bottom and 35px left */
+}
+
+/*
+3.Border Color*/
+
+p {
+    border-style: solid;
+    border-color: red;
+}
+
+/*
+4.Border Radius property
+
+The CSS border-radius property in CSS is used to round the corners of an element's border, giving it a more 
+visually pleasing and smoother appearance.*/
+  
+h1 {
+    border-style: solid;
+    text-align: center;
+    background: green;
+    border-radius: 20px;
+}
+
+/*BORDER SHORTHAND */
+p {
+  border: 5px solid red;
+}
+
+/* MARGINS
+
+CSS margins are used to create space outside an element’s border, helping to separate it from other elements 
+on a webpage. */
+
+p {
+  margin-top: 100px;
+  margin-bottom: 100px;
+  margin-right: 150px;
+  margin-left: 80px;
+}
+/*
+If the margin property has four values:
+margin: 25px 50px 75px 100px;
+top margin is 25px
+right margin is 50px
+bottom margin is 75px
+left margin is 100px
+
+If the margin property has three values:
+margin: 25px 50px 75px;
+top margin is 25px
+right and left margins are 50px
+bottom margin is 75px
+
+If the margin property has two values:
+margin: 25px 50px;
+top and bottom margins are 25px
+right and left margins are 50px
+
+AUTO VALUE-
+The element will then take up the specified width, and the remaining space will be split equally between the 
+left and right margins.
+
+*/
+div {
+  width: 300px;
+  margin: auto;
+  border: 1px solid red;
+}
+
+/*PADDING
+
+CSS Padding property is used to create space between the element's content and the element's border. 
+It only affects the content inside the element.
+
+CSS has properties for specifying the padding for each side of an element:
+
+padding-top - sets the top padding of an element
+padding-right - sets the right padding of an element
+padding-bottom - sets the bottom padding of an element
+padding-left - sets the left padding of an element
+
+If the padding property has four values:
+
+padding: 25px 50px 75px 100px;
+top padding is 25px
+right padding is 50px
+bottom padding is 75px
+left padding is 100px
+
+If the padding property has three values:
+
+padding: 25px 50px 75px;
+top padding is 25px
+right and left paddings are 50px
+bottom padding is 75px
+
+If the padding property has two values:
+
+padding: 25px 50px;
+top and bottom paddings are 25px
+right and left paddings are 50px
+
+*/

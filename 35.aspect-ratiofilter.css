@@ -1,0 +1,26 @@
+/*
+
+CSS FILTERS
+
+The CSS filter property is used to add visual effects (like blur and saturation) to elements.
+
+Within the filter property, you can use the following CSS functions:
+
+blur()
+brightness()
+contrast()
+drop-shadow()
+grayscale()
+hue-rotate()
+invert()
+opacity()
+saturate()
+sepia()
+
+ASPECT-RATIO
+
+The aspect-ratio property allows you to define the ratio between width and height of an element.
+
+If aspect-ratio and width properties are set, the height will follow in the defined aspect ratio.
+
+*/

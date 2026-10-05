@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+       body{
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background-color: #131212;
+       } 
+       .glass-card{
+        width: 400px;
+        height: 200px;
+        background: rgba(114, 112, 112, 0.212);
+        border-radius: 10px;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        border: 1px solid rgba(114, 112, 112, 0.212);
+       }
+       h2{
+        color: #fff;
+        padding: 20px 0;
+       }
+         .progress-container{
+          width: 80%;
+          height: 20px;
+          background-color: rgba(114, 112, 112, 0.212);
+          margin-bottom: 30px;
+          border-radius: 10px;
+          margin-left: 40px;
+         }
+        .progress-bar{
+                width: 0%;
+                height: 100%;
+                background-color: #fff;
+                border-radius: 10px;
+                
+        }
+         .percent{
+            color: #fff;
+            font-size: 20px;
+            letter-spacing: 0.4px;
+         }
+    </style>
+</head>
+<body>
+    <div class="glass-card">
+        <h2>downloading...</h2>
+        <div class="progress-container">
+            <div class="progress-bar"></div>
+        </div>
+        <div class="percent" id="percentText">0%</div>
+    <script src="index.js"></script>
+</body>
+</html>

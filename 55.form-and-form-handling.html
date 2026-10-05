@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        small{
+            color: red;
+            font-size: 10px;
+            
+        }
+        .hid{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <!--
+    form-->
+    <form>
+        <input type="text" placeholder="name" id="name">
+        
+        <div class="hid">
+            <br>
+            <small>name is required and must be at least 3 characters long</small>
+        </div>
+        <br><br>
+        <input type="email" placeholder="email" id="email">
+        <br><br>
+        <input type="password" placeholder="password" id="password">
+        <br><br>
+        <select>
+            <option value="male">male</option>
+            <option value="female">female</option>
+            <option value="other">other</option>
+        </select>
+        <br><br>
+        <textarea placeholder="tell us about you"></textarea>
+        <br><br>
+        <input type="submit" placeholder="submit">
+    </form>
+    <script src="55.form-and-form-validation.js"></script>
+</body>
+</html>

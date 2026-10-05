@@ -1,0 +1,37 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+}
+
+html,body{
+  height: 100%;
+  width: 100%;
+}
+
+.parent{
+  padding: 20px;
+  display: flex;
+  /* align-items: center; */
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.card{
+   text-align: center;
+  border: 2px solid black;
+  height: 300px;
+  width: 300px;
+  border-radius: 20px;
+  margin: 100px 50px;
+  padding: 30px 30px;
+  background-color:rgb(247, 225, 195) ;
+  
+}
+
+.im{
+  height: 80px;
+  width: 80px;
+  border-radius: 45%;
+  object-fit: cover;
+}

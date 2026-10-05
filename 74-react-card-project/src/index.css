@@ -1,0 +1,162 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,body{
+  height: 100%;
+  width: 100%;
+}
+/* .parent{
+  display: flex;
+  flex-wrap: wrap;
+}
+.card{
+  height: 300px;
+  width: 300px;
+}
+
+.imag{
+  height: 100px;
+  width: 100px;
+  object-fit: cover;
+}
+ */
+/* Main container */
+.nav{
+  width: 95%;
+  margin: 20px 10px;
+  padding: 20px 20px;
+  
+  background-color: #f7b852;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 10px;
+
+}
+
+.left{
+  
+  width: 100px;
+  display: flex;
+  gap:20px;
+  padding-left: 20px;
+  align-items: center;
+}
+
+.logo{
+  height: 40px;
+  width:60px;
+  padding-left:20px;
+
+}
+
+.logotext{
+  font-size: 29px;
+  font-weight: bold;
+  padding-top: 5px;
+
+}
+
+.right{
+  display: flex;
+  justify-content: space-between;
+  width: 700px;
+  padding: 1px 30px;
+  font-size: 20px;
+  align-items: center;
+}
+
+
+.contact{
+  margin-top: 2px;
+  padding: 7px 8px;
+  font-size: 14px;
+  border-radius: 10px;
+  cursor: pointer;
+  background-color: #f3c884;
+  border: 2px solid #f3c884;
+  
+}
+.Signin{
+margin: 8px 8px;
+  padding: 7px 8px;
+  font-size: 14px;
+  border-radius: 10px;
+  cursor: pointer;
+  background-color: #f3c884;
+  border: 2px solid #f3c884;
+}
+.parent {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  padding: 30px;
+  justify-content: center;
+  flex-direction: row;
+}
+
+
+/* Hotel card */
+.card {
+  width: 300px;
+  min-height: 350px;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 15px;
+  background-color: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  overflow: hidden;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
+}
+
+/* Hotel image */
+.imag {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+  border-radius: 10px;
+}
+
+/* Hotel name */
+.name {
+  font-size: 22px;
+  margin: 15px 0 8px;
+}
+
+/* Location */
+.loc {
+  color: #666;
+  margin: 5px 0;
+}
+
+/* Price */
+.price {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+/* Rating */
+.rate {
+  color: #f5a623;
+  font-weight: bold;
+}
+
+.Explore{
+  margin: 20px 8px;
+  padding: 5px 5px;
+  font-size: 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  background-color: #f5a623;
+  border: 2px solid #f5a623;
+}

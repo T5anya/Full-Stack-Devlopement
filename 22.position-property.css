@@ -1,0 +1,112 @@
+/*POSITION PROPERTY
+The position property specifies the positioning type for an element.
+
+This property can have one of the following values:
+
+static - This is default
+relative
+fixed
+absolute
+sticky
+Elements are then positioned to their final location with the top, bottom, left, and right properties.
+
+*/
+
+/*STATIC
+
+Static is the default position of an element. It does not accept properties like top, left, right, or bottom.
+Static positioned elements are not affected by the top, bottom, left, and right properties.
+
+An element with position: static; is always positioned according to the normal flow of the page:
+*/
+div.static {
+  position: static;
+  border: 3px solid #73AD21;
+}
+
+/*
+RELATIVE
+An element with position: relative; is positioned relative to its normal position in the document flow.
+Setting the top, right, bottom, and left properties will cause the element to be adjusted away from its normal 
+position. Other content will not be adjusted to fit into any gap left by the element.
+
+*/
+div {
+    border: 1px solid black;
+    padding: 10px;
+    margin: 10px;
+}
+.relative {
+    position: relative;
+    top: 20px;
+    left: 30px;
+}
+
+/*Box 2 is shifted 20px down and 30px to the right from its normal position.*/
+
+/*
+FIXED
+An element with position: fixed; is positioned relative to the viewport, which means it always stays in the 
+same place even if the page is scrolled. The top, right, bottom, and left properties are used set the final 
+location of the element.
+A fixed element does not leave a gap in the page where it would normally have been located.
+*/
+
+.fixed {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background-color: lightgreen;
+    padding: 20px;
+    border: 2px solid black;
+}
+.content {
+    height: 1200px;
+    padding: 10px;
+}
+
+/*
+The fixed element stays at the top-right corner of the viewport even as the user scrolls.*/
+
+/*ABSOLUTE
+
+An element with position: absolute; is positioned relative to the nearest positioned ancestor (with position other 
+than static). However; if an absolute positioned element has no positioned ancestors, it uses the document body, 
+and moves along with page scrolling. Note: Absolute positioned elements are removed from the normal document flow, 
+and can overlap other elements.
+*/
+
+.container {
+    position: relative;
+    width: 300px;
+    height: 200px;
+    border: 2px solid black;
+    margin: 20px auto;
+}
+.absolute {
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    background-color: pink;
+    padding: 10px;
+}
+
+/*The pink box (.absolute) is positioned 50px down and 50px right within the .container.
+It does not affect other elements in the flow.*/
+
+/*STICKY
+
+An element with position: sticky; toggles between a relative and fixed position, depending on the scroll position.
+A sticky element is positioned relative until a certain scroll position is reached - then it "sticks" in that
+place (like position:fixed).
+*/
+
+.sticky {
+    position: sticky;
+    top: 0;
+    background-color: yellow;
+    padding: 10px;
+}
+
+/*
+The sticky element stays at the top of the viewport as you scroll but only within its containing element.*/

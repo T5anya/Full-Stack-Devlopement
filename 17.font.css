@@ -1,0 +1,164 @@
+/* FONTS*/
+
+/*
+1. Font Family-
+
+The font-family property defines which font(s) should be used for text. You can provide a list of fonts as a 
+fallback mechanism in case the preferred font is unavailable.
+
+
+font-family: "Font Name", generic-font-name; 
+
+CSS Generic Font Families
+In CSS, there are five generic font families:
+
+Serif fonts - have a small stroke at the edges of each letter. They create a sense of formality and elegance.
+Sans-serif fonts - have clean lines (no small strokes attached). They create a modern and minimalistic look.
+Monospace fonts - here all the letters have the same fixed width. They create a mechanical look.
+Cursive fonts - imitate human handwriting.
+Fantasy fonts - are decorative/playful fonts.
+All the different font names belong to one of the generic font families.
+
+Therefore, it is very important to always use fallback fonts.
+
+This means that you should add a list of similar "backup fonts" in the font-family property. 
+If the first font does not work, the browser will try the next one, and the next one, and so on. 
+Always end the list with a generic font family name.
+
+p {
+  font-family: Tahoma, Verdana, sans-serif;
+}
+*/
+
+
+body {
+    font-family: "Arial", sans-serif;
+}
+
+
+
+
+/* 
+2. Font Size-
+
+The CSS font-size property is used to specify the size of the text/font.
+Being able to manage the text size is very important in web design.
+
+Absolute sizes:
+
+px: Pixels offers fixed and precise control over the font size.
+xx-small, x-small, small, medium, large, x-large, xx-large. These keywords has a predefined set of sizes in browsers.
+Relative sizes:
+
+em: This unit is relative to the font size of the parent element.
+rem: This unit is relative to the font size of the root HTML element.
+%: This unit is relative to the font size of the parent element
+smaller and larger: These units adjust the font size relative to the parent element.
+
+How to Pick the Right Unit?
+For fixed and precise control, px can be used.
+With px, the web page will not scale well on different screen sizes or with user preferences.
+Absolute size can be useful when the physical size of the output is known.
+For scalable web designs, use em or rem; they allow users to adjust text size in their browser settings.
+Percentage (%) can be useful for adjusting font sizes based on parent elements.
+
+*/
+
+/* 
+3. Font-Weight-
+
+*/
+ p{   
+   font-weight: 600;   
+ }  
+ /* 
+something like bold font,light font etc 
+The different allowed values are: 
+bold,bolder,lighter,normal 
+100 to 900 where 100 means light and 900 means too much bold.
+*/
+
+/*
+4. Font-Style-
+
+The CSS font-style property specifies the font style for a text..
+This property can have one of the following values:
+
+normal - The text is shown normally
+italic - The text is shown in italics
+oblique - The text is "leaning" (oblique is very similar to italic)
+
+*/
+p.normal {
+  font-style: normal;
+}
+
+p.italic {
+  font-style: italic;
+}
+
+p.oblique {
+  font-style: oblique;
+}
+
+/*
+5. Font-Variant-
+
+The CSS font-variant property specifies whether or not a text should be displayed in a small-caps font.
+
+In a small-caps font, all lowercase letters are converted to uppercase letters. However, the converted uppercase letters appears in a smaller font size than the original uppercase letters in the text.
+
+Example
+*/
+p.normal {
+  font-variant: normal;
+}
+
+p.small {
+  font-variant: small-caps;
+}
+
+/*FONT SHORTHAND PROPERTY-
+
+The CSS font property is a shorthand property for:
+
+font-style
+font-variant
+font-weight
+font-stretch
+font-size
+line-height
+font-family
+
+*/
+p.a {
+  font: 20px Arial, sans-serif;
+}
+
+p.b {
+  font: italic bold 16px Arial, sans-serif;
+}
+
+p.c {
+  font: italic small-caps bold 15px/30px Georgia, serif;
+}
+
+/* USING EXTERNAL FONTS
+
+Most of the times we can select custom fonts from the google https://fonts.google.com/ 
+ 
+select required fonts  and add that link in html header part. 
+Inside css file specify that font wint font-family attribute
+*/
+/*
+Example-
+<link href="https://fonts.googleapis.com/css?family=Eater|Great+Vibes|Indie+F
+ lower" rel="stylesheet">     
+<body>   
+   <h1>This is Heading</h1>   
+</body>   
+
+ body{   
+   font-family: 'Great Vibes', cursive;   
+   font-size:30px;   
+ }   */

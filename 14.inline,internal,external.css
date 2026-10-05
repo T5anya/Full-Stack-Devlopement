@@ -1,0 +1,27 @@
+/*INLINE
+
+<h1 style="color:blue;text-align:center;">This is a heading</h1>
+<p style="color:red;">This is a paragraph.</p>*/
+
+/*INTERNAL
+
+Internal styles are defined within the <style> element, inside the <head> section of an HTML page:
+
+<style>
+body {
+  background-color: linen;
+}
+
+h1 {
+  color: maroon;
+  margin-left: 40px;
+}
+</style>*/
+
+/*EXTERNAL
+
+With an external style sheet, you can change the look of an entire website by changing just one file!
+
+<head>
+<link rel="stylesheet" href="mystyle.css">
+</head>

@@ -1,0 +1,100 @@
+@import url(https://fonts.googleapis.com/css?family=Pacifico);
+/*Add variables here:*/
+h1 {
+  font-family: Roboto, sans-serif;
+  text-align: center;
+}
+
+.banner {
+  font-family: "Pacifico", cursive;
+  height: 400px;
+  background-image: url("lemonade.jpg");
+}
+
+.container {
+  text-align: center;
+  font-family: "Pacifico", cursive;
+}
+
+button {
+  background: #ff5722;
+}
+
+.card {
+  border-color: #ff5722;
+}
+
+#sidebar {
+  float: left;
+  width: 25%;
+  background-color: lightblue;
+  padding: 30px 10px;
+}
+#sidebar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+#sidebar li {
+  padding: 6px;
+  margin-bottom: 10px;
+  background-color: #10A2FF;
+  color: #ffffff;
+}
+#sidebar li a {
+  text-decoration: none;
+  color: #707070;
+}
+#sidebar li a:hover {
+  color: #069c54;
+}
+
+.modal, .card {
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.card {
+  background: white;
+}
+
+.modal {
+  background: gray;
+}
+
+.info {
+  background: DarkGray;
+  box-shadow: 0 0 1px rgba(169, 169, 169, 0.25);
+  color: #fff;
+}
+
+.alert {
+  background: DarkRed;
+  box-shadow: 0 0 1px rgba(139, 0, 0, 0.25);
+  color: #fff;
+}
+
+.success {
+  background: DarkGreen;
+  box-shadow: 0 0 1px rgba(0, 100, 0, 0.25);
+  color: #fff;
+}
+
+body {
+  background: black;
+  color: white;
+}
+
+.m-1 {
+  margin: 1rem;
+}
+
+.m-2 {
+  margin: 2rem;
+}
+
+.m-3 {
+  margin: 3rem;
+}
+
+/*# sourceMappingURL=main.css.map */

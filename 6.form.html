@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--
+    The <form> element is used to create a form in HTML. Forms are 
+used to gather user input. 
+Some attributes associated with the <form> element include:  
+• The action attribute specifies where the form data should be 
+sent when the form is submitted. <form action="target.html" >    <form action="https://facebook.com" >
+• The target attribute specifies where to display the form's 
+response. 
+• The autocomplete attribute can have a value of on or off 
+and determines whether the browser should automatically 
+fill in the form. 
+• The novalidate attribute specifies that the form should not 
+be validated. 
+• The method attribute specifies the HTTP method to use 
+when sending form data. 
+• The name attribute specifies the name of the form. 
+• The required attribute specifies that an input element 
+cannot be left blank. 
+• The autofocus attribute gives focus to the input elements 
+when the page loads. 
+• The disabled attribute disables an input element, preventing 
+the user from interacting with it. 
+• The placeholder attribute is used to provide a hint to the 
+user about what information is required for the input 
+element. 
+
+
+Other input elements that can be used in forms include:  
+
+ <input>: provides an input field for users to enter data. The type attribute specifies the type of data that can be entered.  
+ <button>: creates a button that can be clicked to perform an action.
+ <textarea>: allows users to enter multiple lines of text as input. 
+ <select>: provides a list of options for users to choose from.  
+ <option>: creates a single option within a <select> element.    
+    -->
+
+<form action="/Submit_URL/" method="post"> 
+<label for="FirstName"> First Name: </label> 
+<input type="text"  
+name="FirstName"  
+placeholder="First Name"  
+required > 
+<label for="LastName"> Last Name: </label> 
+<input type="text"  
+name="LastName"  
+placeholder="Last Name"  
+required > 
+<label for="add"> Address: </label> 
+<textarea name="add"></textarea> 
+<label for="age"> Age: </label> 
+<select id="age"> 
+<option value="11-20">11-20</option> 
+<option value="21-30">21-30</option> 
+<option value="31-40">31-40</option> 
+<option value="41-40">41-50</option> 
+</select> 
+<input type="submit" value="Submit"> 
+</form> 
+</body>
+</html>
+
+
+<!--input types-->
+<!--<input type="">
+ text 
+ email 
+ password 
+ color 
+ submit 
+ checkbox 
+ radio 
+button
+
+-->
+<!--input attributes-->
+<!--
+type
+It is used to specify the type of the input element. Its default value is text.
+
+value
+It is used to specify the value of the input element.
+
+placeholder
+Placeholder attribute is used to specify hint that describes the expected value of an input field.
+
+name
+It is used to specify the name of the input element.
+
+alt
+It is used to provide alternate text for the user, if they cannot view the image.
+
+required  
+If end user compulsory should required to provide input value then we should go for 
+required attribute.ex-<input id="name" type='text' name='username' placeholder='Name to Contact' required>
+-->
+
+<!--radio ex-->
+
+ <h3>Gender:</h3>   
+<label for='m'>Male</label>   
+<input id='m' type='radio' name="gender" value="Male">   
+<label for='f'>Female</label>   
+<input id='f' type='radio' name="gender" value="Female">   
+<label for='t'>Transgender</label>   
+<input id='t' type='radio' name="gender" value="Transgender">
+
+<!--checkbox ex-->
+
+<form>   
+  <h2>Choose Your Known Languages:</h2>   
+  <input type="checkbox"  name="languages" value="english" checked> English<br> 
+     <input type="checkbox"  name="languages" value="telugu"> Telugu<br>   
+     <input type="checkbox"  name="languages" value="hindi"> Hindi<br>   
+     <input type="checkbox"  name="languages" value="tamil"> Tamil<br>   
+  </form>
+
+<!--Label tag-->
+<!--
+The <label> HTML element represents a caption for a form element in a user interface. 
+It improves accessibility by linking text to form elements. When a user clicks on the label, 
+it automatically focuses on or activates the associated input, such as text fields, checkboxes, or radio buttons.
+
+<label> form content... </label>
+Descriptions
+
+for
+It refers to the input control that this label is for. Its value must be the same as the value of the input control's "id" attribute.
+
+form
+It refers to the form to which the label belongs to.
+-->
+
+Example:
+ <label for="student">
+            Student
+ </label>
+ <input type="radio" 
+    name="Occupation" 
+    id="student" 
+    value="student"><br>
+
+
+<!--BUTTON-->
+<!--
+The <input type="button"> and <button> tag are two different approach to use Button in HTML document. 
+The difference between them is that the buttons created with the <button> tag offer many contributing 
+possibilities than <input type="button"> attribute. The <button> can have content inside it.
+-->
+
+    <label for="submit">
+            Enter value
+        </label>
+        
+        <input type = "text">
+    
+        <input type="button" id="submit" 
+            onclick ="msg()" value="button"> 
+
+    <button type="submit"><img src=
+        "https://www.freeiconspng.com/uploads/login-button-png-4.jpg"
+            height="40" width="100">
+        </button><br>
+        
+        <button type="button" class="cancelbtn">Cancel</button>
+        
+
+<!--DRopdown-->
+
+<h3>Please Select Your Payment Mode:</h3>   
+     <option value='ccard'>Credit Card</option>   
+ <select name='pmode'>   
+         <option value='dcard'>Dedit Card</option>   
+         <option value='ppal'>Paypal</option>   
+         <option value='otransfer'>OnlineTransfer</option>   
+ </select>   
+
+
+ <!--textarea-->
+
+ <h2>Enter Your FeedBack:</h2>   
+ <textarea name="feedback" rows="8" cols="80"> 
+
+<!--
+    How to include spaces in HTML: 
+1) Type "nbsp" to add a single space. 
+2) Type "ensp" to add 2 spaces. 
+3) Type "emsp" to add 4 spaces. 
+4) Use the non-breaking space (nbsp) 4 times to insert a tab. 
+5) Use "br" to add a line break. 
+-->

@@ -1,0 +1,380 @@
+Sass (Syntactically Awesome Style Sheets) is a CSS preprocessor that enhances standard CSS by 
+introducing features like variables, nesting, imports, mixins, and inheritance, all while maintaining
+compatibility with all CSS versions.
+
+❌Plain CSS
+button {
+  background: #4f46e5;
+}
+
+✅ SCSS
+$primary-color: #4f46e5;
+
+button {
+  background: $primary-color;
+}
+, you will need a Sass pre-processor to convert Sass code into standard CSS.
+
+Write SCSS Code: 
+Create a file named styling.scss with your Sass code.
+Compile SCSS to CSS: Use the command sass styling.scss style.css to compile the SCSS file into a 
+standard CSS file named style.css.
+Include in HTML: Link the compiled style.css file in your HTML document within the <head> section.
+
+If you have some code written as per Sass syntax and you want to convert it into Scss syntax, 
+you can do so using the sass-convert command. For example, if we have Sass code in sass-style.sass 
+file and we have scss-style.scss for Scss code, we can convert the Sass code to Scss code using the 
+following command,
+
+sass-convert sass-style.sass scss-style.scss
+
+1.
+VARIABLES-
+a)-
+❌ CSS
+button {
+  background: #ff5722;
+}
+.card {
+  border-color: #ff5722;
+}
+
+✅ SCSS
+$primary-color: #ff5722;
+
+button {
+  background: $primary-color;
+}
+
+.card {
+  border-color: $primary-color;
+}
+
+
+b)-
+$myColor: red;
+
+h1 {
+  $myColor: green;
+  color: $myColor;
+}
+
+p {
+  color: $myColor;
+}
+
+Will the color of the text inside a <p> tag be red or green? It will be red!
+
+The other definition, $myColor: green; is inside the <h1> rule, and will only be available there!
+
+
+c)-
+!global indicates that a variable is global, which means that it is accessible on all levels.
+
+$myColor: red;
+
+h1 {
+  $myColor: green !global;
+  color: $myColor;
+}
+
+p {
+  color: $myColor;
+}
+
+Now the color of the text inside a <p> tag will be green!
+
+2-
+nesting
+
+❌ CSS
+nav ul {}
+nav ul li {}
+nav ul li a {}
+
+✅ SCSS
+nav {
+  ul {
+    li {
+      a {
+        color: white;
+      }
+    }
+  }
+}
+
+Ex-
+#sidebar {
+    float:left;
+    width:25%;
+    background-color:lightblue;
+    padding: 30px 10px;
+}
+
+#sidebar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+#sidebar li {
+    padding: 6px;
+    margin-bottom: 10px;
+    background-color: #10A2FF;
+    color: #ffffff;
+}
+
+#sidebar li a {
+  text-decoration: none;
+  color: #707070;
+}
+
+#sidebar li a:hover {
+  color: #069c54;
+}
+
+But in Scss we can use the nested rules to do so in a more readable way,
+
+#sidebar {
+    float:left;
+    width:25%;
+    background-color:lightblue;
+    padding: 30px 10px;
+    
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+    
+    li {
+        padding: 6px;
+        margin-bottom: 10px;
+        background-color: #10A2FF;
+        color: #ffffff;
+
+        a {
+      text-decoration: none;
+      color: #707070;
+
+         &:hover {
+        color: #069c54;
+                }
+        }
+    }
+}
+
+
+3- 
+PARENT SELECTOR-
+ you might notice the ampersand symbol & used with the hover pseudo-class. This is called a Parent Selector.
+So, in the case of the code above, & will refer to the parent which is the anchor tag a.
+
+4-
+PARTIALS-
+
+As stylesheets grow large over time, it gets difficult to maintain them. Because of this, it just makes sense to break your stylesheets into smaller chunks. In other words, Partials help you organize and structure your code.
+
+To declare a partial, we will start the file name with an underscore _, and add it in another Sass file using the @import directive.
+
+For example, if we have a _globals.scss, _variables.scss, and _buttons.scss, we could import them into the main SCSS file main.scss.
+
+@import "globals";
+@import "variables";
+@import "buttons";
+
+
+Ex-
+file 1 
+// _base.scss
+$font-stack: Helvetica, sans-serif;
+$primary-color: #333;
+
+body {
+  font: 100% $font-stack;
+  color: $primary-color;
+}
+
+file 2
+// styles.scss
+@use 'base';
+
+.inverse {
+  background-color: base.$primary-color;
+  color: white;
+}
+
+
+its css file will be
+
+body {
+  font: 100% Helvetica, sans-serif;
+  color: #333;
+}
+
+.inverse {
+  background-color: #333;
+  color: white;
+}
+
+5-
+MIXINS-
+
+Ex-
+
+1)-
+$fs: 30px;
+#col2: #ff0066e1;
+$pd: 100px 350px;
+@mixin font_style() {
+ font-family: sans-serif;
+ font-size: $fs;
+ color: blue;
+}
+@mixin list_style($size, $color) {
+ font-size: $size;
+ color: $color;
+}
+#dl {
+ @include font_style();
+ padding: $pd;
+ li {
+   @include list_style(20px, red);
+ }
+}
+
+this .scss file will convert into .css 
+
+#dl {
+ font-family: sans-serif;
+ font-size: 30px;
+ color: blue;
+ padding: 100px 350px;
+}
+#dl li {
+ font-size: 20px;
+ color: red;
+}
+
+2)-
+@mixin theme($theme: DarkGray) {
+  background: $theme;
+  box-shadow: 0 0 1px rgba($theme, .25);
+  color: #fff;
+}
+
+.info {
+  @include theme;
+}
+.alert {
+  @include theme($theme: DarkRed);
+}
+.success {
+  @include theme($theme: DarkGreen);
+}
+
+will convert into
+
+.css
+.info {
+  background: DarkGray;
+  box-shadow: 0 0 1px rgba(169, 169, 169, 0.25);
+  color: #fff;
+}
+
+.alert {
+  background: DarkRed;
+  box-shadow: 0 0 1px rgba(139, 0, 0, 0.25);
+  color: #fff;
+}
+
+.success {
+  background: DarkGreen;
+  box-shadow: 0 0 1px rgba(0, 100, 0, 0.25);
+  color: #fff;
+}
+
+6-
+FUNCTIONS-
+
+Ex-
+@function pxToRem($pxValue) {
+  $remValue: ($pxValue / 16) + rem;
+  @return $remValue;
+}
+
+div {
+  width: pxToRem(480);
+}
+
+
+7-
+EXTEND-
+1)-
+%box {
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.card {
+  @extend %box;
+  background: white;
+}
+
+.modal {
+  @extend %box;
+  background: gray;
+}
+
+2)-
+.btn {
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.btn-primary {
+  @extend .btn;
+  background: blue;
+}
+
+8-
+CONDITIONS-
+
+1)-
+$theme: dark;
+
+body {
+  @if $theme == dark {
+    background: black;
+    color: white;
+  } @else {
+    background: white;
+    color: black;
+  }
+}
+will convert in
+body {
+  background: black;
+  color: white;
+}
+
+
+2)-
+@for $i from 1 through 3 {
+  .m-#{$i} {
+    margin: #{$i}rem;
+  }
+}
+
+will convert into-
+.m-1 {
+  margin: 1rem;
+}
+
+.m-2 {
+  margin: 2rem;
+}
+
+.m-3 {
+  margin: 3rem;
+}

@@ -1,0 +1,116 @@
+<!--LAYOUT-->
+
+<!--
+HTML layouts are a technique used to divide a web page into multiple sections, making it easier to 
+apply styles,organize content, and manage operations efficiently. This division improves readability, 
+accessibility, and overall user experience.
+
+HTML layout is achieved through elements like <header>, <nav>, <main>, <article>, <section>, <aside>, and 
+<footer> which help organize content, define the page's sections, and improve SEO.
+
+Layout Components
+
+Header
+The top section of a webpage, often containing the website title, logo, or navigation links. The <header> tag is used to define this part of the page.
+
+Navigation bar
+A menu that provides links to the main sections of the website. The <nav> tag is used to define navigation elements in the webpage.
+
+Index / Sidebar
+An optional section often found on the side, used for additional content such as ads, links, or other related information.
+
+Content Section
+The central area where the primary content of the page is displayed. The <main> tag is used to define the main content of a webpage.
+
+Footer
+The bottom section of the webpage, typically containing contact information, legal links, or additional site-related information. The <footer> tag is used to define this area.
+    -->
+
+<!--Layout with Additional Semantic Tags-->
+
+<html>
+<body>
+    <header>
+        <h1>My Blog</h1>
+    </header>
+    <nav>
+        <a href="#">Home</a> | <a href="#">About</a> | <a href="#">Contact</a>
+    </nav>
+    <section>
+        <h2>Latest Posts</h2>
+        <article>
+            <h3>Post Title</h3>
+            <p>This is a brief introduction to the blog post.</p>
+        </article>
+    </section>
+    <aside>
+        <h2>About Me</h2>
+        <p>Short bio or profile information.</p>
+    </aside>
+    <footer>
+        <p>&copy; 2024 My Blog</p>
+    </footer>
+</body>
+</html>
+
+<!--
+
+Explanation:
+<nav> provides navigation links for the website.
+<section> groups related content, here titled "Latest Posts."
+<article> represents an individual blog post.
+<aside> contains supplementary information, such as an "About Me" section
+
+
+    Styled Layout with Semantic Tags
+-->
+
+
+<html >
+<head>
+    <style>
+        header {
+            background-color: #4caf50;
+            color: white;
+            text-align: center;
+            padding: 1em;
+        }
+        nav {
+            background-color: #333;
+            overflow: hidden;
+        }
+        main {
+            padding: 20px;
+        }
+        footer {
+            background-color: #4caf50;
+            color: white;
+            text-align: center;
+            padding: 1em;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Styled Page</h1>
+    </header>
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">Services</a>
+        <a href="#">Contact</a>
+    </nav>
+    <main>
+        <h2>Welcome!</h2>
+        <p>This is a simple page.</p>
+    </main>
+    <footer>
+        <p>&copy; 2024 Styled Page</p>
+    </footer>
+</body>
+​
+</html>
+<!--
+Explanation:
+Header: The <header> element contains the main heading of the page, providing a clear introduction.
+Main: The <main> element holds the primary content, ensuring semantic clarity and improved accessibility
+-->

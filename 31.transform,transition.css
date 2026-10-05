@@ -1,0 +1,271 @@
+/*TRANSFORM*/
+/*3D transforms are used to manipulate HTML elements in three dimensions by rotating them along the x-axis, y-axis, and z-axis. There are three main types of transformation which are listed below:
+
+1-rotateX(): Rotates an element around its X-axis.
+2-rotateY(): Causes rotation around the Y-axis.
+3-rotateZ(): Enables rotation along the Z-axis.
+
+Ex-
+<style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: green;
+            transform: rotateX(30deg) rotateY(30deg) rotateZ(30deg);
+        }
+</style>
+<div class="box"></div>
+
+4-translate()- function moves an element from its current position (according to the parameters 
+given for the X-axis and the Y-axis).
+
+Ex-
+div {
+  transform: translate(50px, 100px);
+}
+
+5-scale()-
+This function increases or decreases the size of an element based on the scaling factors provided for the X-axis and Y-axis.
+
+Ex-
+div {
+  transform: scale(1.5, 2);
+}
+
+6-skew()-
+This function skews an element along the X-axis and Y-axis by the angles specified.
+
+Ex-
+div {
+  transform: skew(20deg, 10deg);
+}
+
+7-transform-origin-
+This property sets the point around which a transformation is applied. By default, it is set to the center of the element, but it can be changed to other positions like top left, bottom right, or specific coordinates.
+
+Ex-
+div {
+  transform-origin: top left;
+}
+
+8-matrix()-
+This function allows for complex transformations by combining multiple transformation functions into a single matrix. It takes six parameters that define the transformation.
+        
+ matrix(scaleX(), skewY(), skewX(), scaleY(), translateX(), translateY())
+
+Ex-
+div {
+  transform: matrix(1, 0.5, -0.5, 1, 0, 0);
+}
+
+9-translate3d()-
+This function moves an element in 3D space along the X, Y, and Z axes.
+
+Ex-
+div {
+  transform: translate3d(50px, 100px, 30px);
+}
+*/
+
+
+/*TRANSITIONS*/
+/*CSS transitions enable smooth changes between property values over a specified duration. They 
+enhance user experience by providing visual feedback during interactions.
+
+To create a transition, you need to define the property you want to animate, the duration of the
+animation, the timing function (which controls the speed curve), and an optional delay before the
+animation starts.
+
+Ex-
+div {
+  width: 100px;
+  height: 100px;
+  background-color: blue;
+  transition: background-color 0.5s ease-in-out;
+}
+div:hover {
+  background-color: red;
+}
+
+The CSS transition property is a shorthand property for:
+
+transition-property (Required)
+transition-duration (Required)
+transition-timing-function
+transition-delay
+*/
+
+/*
+The transition is triggered when there is a change in the element's properties. 
+This often happens within pseudo-classes (:hover, :active, :focus, or :checked).
+So, from the code above, the transition effect will start when the width property changes value.
+Now, we add a div:hover class that specifies a new value for the width property when a user mouses over the <div> element:
+
+ex-
+div {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  transition: width 2s;
+}
+
+div:hover {
+  width: 300px;
+}
+
+CHANGING MULTIPLE VALUES-
+
+EX-
+div {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  transition:  width 2s, height 4s, background-color 3s;
+}
+
+div:hover {
+  width: 300px;
+  height: 300px;
+  background-color: orange;
+}
+*//*
+1-transition-property-
+This property specifies the CSS property or properties to which the transition effect is applied.
+transition-property: none | all | property | property1, property2, ..., propertyN;
+Ex-
+div{
+  transition-property: background-color, width;
+}
+
+2-transition-duration-
+This property defines the duration over which the transition effect occurs.
+transition-duration: time | time1, time2, ..., timeN;
+Ex-
+div {
+  transition-duration: 2s, 1s;
+}
+
+3-transition-timing-function-
+This property describes how the intermediate values of the transition are calculated over its duration.
+transition-timing-function: ease | linear | ease-in | ease-out | ease-in-out | step-start | step-end | steps(int, start|end) | cubic-bezier(n, n, n, n);
+Ex-
+div {
+  transition-timing-function: ease-in-out;
+}
+ease - transition will start slow, then go fast, and end slow (this is default)
+linear - transition will keep the same speed from start to end
+ease-in - transition will start slow
+ease-out- transition will end slow
+ease-in-out - transition will have a slow start and end
+
+4-transition-delay-
+This property specifies the delay before the transition effect starts.
+transition-delay: time | time1, time2, ..., timeN;
+Ex-
+div {
+  transition-delay: 1s, 0s;
+}
+SHORTHAND :
+The transition shorthand property allows you to set all the individual transition properties in a single line.
+transition: [transition-property] [transition-duration] [transition-timing-function] [transition-delay
+];
+Ex-
+div {
+  transition: width 2s ease-in-out 1s;
+}
+ANIMATION
+/*CSS animations make it possible to animate transitions from one CSS style configuration to another.
+To use CSS animations, you need to define the animation using the @keyframes rule, and then apply the 
+animation to an element using the animation property.
+
+animation: [animation-name] [animation-duration] [animation-timing-function] 
+[animation-delay] [animation-iteration-count] [animation-direction] [animation-fill-mode]
+[animation-play-state];
+
+1-@keyframes-
+The @keyframes rule is used to define the animation. You specify the name of the animation and the 
+keyframes that describe the styles at various points during the animation sequence.
+@keyframes animation-name {
+  from {
+    /* starting styles 
+  }
+  to {
+    /* ending styles 
+  }
+}
+Ex-
+@keyframes slidein {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+*/
+
+/*2-animation-
+The animation property is a shorthand property that allows you to set multiple animation properties at once.
+animation: name duration timing-function delay iteration-count direction fill-mode play-state;
+Ex-
+div { 
+  animation: slidein 3s ease-in-out 1s infinite alternate forwards;
+}
+*/
+/*Individual animation properties are listed below-*/
+/*animation-name-
+This property specifies the name of the @keyframes animation to apply to the element. 
+animation-name: none | animation-name;
+Ex-
+div { 
+  animation-name: slidein;
+}
+*/
+/*animation-duration-
+This property defines the length of time an animation takes to complete one cycle.
+animation-duration: time; 
+Ex-
+div { 
+  animation-duration: 3s;
+}
+*/    
+/*animation-timing-function-
+This property describes how the animation progresses over its duration.
+animation-timing-function: ease | linear | ease-in | ease-out | ease-in-out | step-start | step-end | steps(int, start|end) | cubic-bezier(n, n, n, n);
+Ex-   
+div { 
+  animation-timing-function: ease-in-out;
+}
+*/  
+/*animation-delay-
+This property specifies a delay before the animation starts.
+animation-delay: time;  
+Ex-
+div { 
+  animation-delay: 1s;
+}
+*/    
+/*animation-iteration-count-
+This property defines the number of times an animation should repeat.   
+animation-iteration-count: infinite | number;  
+Ex-   
+div { 
+  animation-iteration-count: infinite;
+}
+*/    
+/*animation-direction-
+This property specifies whether the animation should play in reverse on alternate cycles.
+animation-direction: normal | reverse | alternate | alternate-reverse;
+Ex-
+div { 
+  animation-direction: alternate;
+}
+*/
+/*animation-fill-mode-
+This property specifies how a CSS animation should apply styles to its target before and after it is executing.   
+animation-fill-mode: none | forwards | backwards | both;
+Ex-
+div { 
+  animation-fill-mode: forwards;
+}
+*/  

@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=>, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width:200px;
+            height:200px;
+            background-color: green;
+            transform: rotateX(30deg) rotateY(30deg) rotateZ(30deg) ;
+            margin-top: 50px;
+            margin-left: 100px;}
+        .container{
+            width: 100%;
+            height: 100%;
+            border:2px solid black;
+        }
+        .box2{
+            width:200px;
+            height:200px;
+            background-color: rgb(115, 198, 234);
+            margin-top: 50px;
+            margin-left: 100px;
+            transform: translate(60px,30px);
+        }
+        .box3{
+            width:200px;
+            height:200px;
+            background-color: rgb(211, 24, 225);
+            transform: scale(2, 2);
+            margin-top: 150px;
+            margin-left: 100px;
+        }
+        .box4{
+            width:200px;
+            height:200px;
+            background-color: rgb(91, 64, 247);
+            transform: skew(20deg,15deg);
+            margin-top: 150px;
+            margin-left: 100px;
+        }
+        .box5{
+            width:200px;
+            height:200px;
+            background-color: rgb(86, 41, 97);
+            transform-origin: top right;
+            margin-top: 50px;
+            margin-left: 100px;
+        }
+        .box6{
+            width:200px;
+            height:200px;
+            background-color: rgb(115, 198, 234);
+            transform: translate(200%);
+            margin-top: 50px;
+            margin-left: 100px;
+        }
+        .box7{
+            width:200px;
+            height:200px;
+            background-color: rgb(115, 198, 234);
+            transform: matrix(1, 0.5, -0.5, 1.5, 0, 0);
+            margin-top: 50px;
+            margin-left: 100px;
+        }
+        .box8{
+            transform:translate3d(50px, 100px, 80px) ;
+             width:200px;
+            height:200px;
+            background-color: rgb(112, 17, 72);
+            margin-top: 50px;
+            margin-left: 100px;
+        }
+        .boxe1{
+            width: 200px;
+            height: 200px;
+            background-color: aqua;
+            margin-top: 150px;
+            margin-left: 100px;
+            transition: width 2s;
+        }
+        .boxe2{
+            width: 200px;
+            height: 200px;
+            background-color: rgba(38, 35, 225, 0.615);
+            margin-top: 100px;
+            margin-left: 100px;
+            transition:width 2s, height 2s, background-color 2s; 
+        }
+        .boxe1:hover{
+            width: 400px;
+        }
+        .boxe2:hover{
+            width: 400px;
+            height: 400px;
+            background-color: rgb(255, 0, 0);
+        }
+        .boxe3{
+            width: 200px;
+            height: 200px;
+            background-color: rgb(255, 255, 0);
+            margin-top: 100px;
+            margin-left: 100px;
+            transition: all 2s;
+        }
+        .boxe3:hover{
+            width: 400px;
+            height: 400px;
+            background-color: rgb(0, 255, 0);
+            transform: rotate(45deg);
+        }
+        .boxe4{
+            width: 200px;
+            height: 200px;
+            background-color: rgb(255, 255, 0);
+            margin-top: 100px;
+            margin-left: 100px; 
+            transition: width 2s ease-in-out 0.5s;
+        }
+        .boxe4:hover{
+            width: 400px;
+        }   
+        .boxe5 {
+  width: 200px;
+  height: 200px;
+  background-color: red;
+  margin-top: 100px;
+  margin-left: 100px;
+  transition: width 2s, height 2s, background-color 2s, transform 2s;
+}
+
+.boxe5:hover {
+  width: 300px;
+  height: 300px;
+  background-color: orange;  
+  transform: rotate(180deg);
+}
+    button {
+  background-color: lightgray;
+  padding: 20px 30px;
+  border-radius: 10px;
+  margin-top: 100px;
+  margin-left: 100px;
+  transition: background-color 1s ease-out, transform 1s ease-out;
+  font-size: 4vh;
+}
+
+button:hover {
+  background-color: lightgreen;
+  transform: scale(1.5);
+}
+    .boxe7{
+            background-color: rgb(77, 213, 168);
+            width: 200px;
+            height: 200px;
+            transition-property: background-color, transform;
+            transition-duration: 3s;
+             transition-delay: 1s; 
+            margin-top: 70px;
+            margin-left: 100px;
+        margin-bottom: 90px;}
+
+        .translate{
+            transform: translateX(100px) translateY(100px) scale(1.5);
+            background-color: blue;
+        }
+        .boxe7:hover{
+            background-color: orange;
+            transform: translateX(150px) translateY(200px) scale(2);
+        }
+        @keyframes myAnimation {
+  from {background-color: rgb(255, 140, 0);}
+  to {background-color: rgb(244, 192, 80);}
+}
+        .bo1{
+  width: 200px;
+  height: 200px;
+  background-color: red;
+  animation-name: myAnimation;
+  animation-duration: 4s;
+    animation-iteration-count: infinite;
+    margin: 80px 60px;
+}
+
+
+.bo2 {
+            width: 200px;
+            height: 200px;
+            background-color: blue;
+            animation-name: fadeIn;
+            animation-duration: 2s;
+            animation-delay: 1s;
+            animation-iteration-count: infinite;
+            margin: 70px 80px;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .bo3{
+            width: 200px;
+  height: 200px;
+  margin:80px 90px;
+  background-color: red;
+  position: relative;
+  animation-name: mynimation;
+  animation-duration: 4s;
+  animation-iteration-count: 2;
+  animation-direction: alternate-reverse; /* forward then backward*/
+}
+
+@keyframes mynimation {
+  0%   {background-color:red; left:0px; top:0px;}
+  25%  {background-color:yellow; left:200px; top:0px;}
+  50%  {background-color:blue; left:200px; top:200px;}
+  75%  {background-color:green; left:0px; top:200px;}
+  100% {background-color:red; left:0px; top:0px;}
+}
+      
+    .bo4{
+    width: 200px;
+  height: 200px;
+  margin:80px 90px;
+  background-color: red;
+  position: relative;
+  animation-name: myAnimation;
+  animation-duration: 4s;
+  animation-iteration-count: 2;
+  animation-direction: alternate; /* backward then forward*/
+}
+
+@keyframes myAnimation {
+  0%   {background-color:red; left:0px; top:0px;}
+  25%  {background-color:yellow; left:200px; top:0px;}
+  50%  {background-color:blue; left:200px; top:200px;}
+  75%  {background-color:green; left:0px; top:200px;}
+  100% {background-color:red; left:0px; top:0px;}
+}
+    .ai{
+  animation-duration: 3s;
+  animation-name: slide-in;
+}
+
+@keyframes slide-in {
+  from {
+    translate: 150vw 0;
+    scale: 200% 1;
+  }
+
+  to {
+    translate: 0 0;
+    scale: 100% 1;
+  }
+}
+
+    
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box"></div>
+        <div class="box2"></div>
+        <div class="box3"></div>
+        <div class="box4"></div>
+        <div class="box5"></div>
+        <div class="box6"></div>
+        <div class="box7"></div>
+        <div class="box8"></div>
+        <div class="boxe1"></div>
+        <div class="boxe2"></div>
+        <div class="boxe3"></div>
+        <div class="boxe4"></div>
+        <div class="boxe5"></div>
+        <div class="boxe6"></div>
+        <div class="boxe7 translate"></div>
+        <button>Click me</button>
+        <div class="bo1"></div>
+        <div class="bo2"></div>
+        <div class="bo3"></div>
+        <div class="bo4"></div>
+        <p class="ai"
+        >
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores omnis eligendi sed facilis, esse commodi magnam voluptate, vero aliquid corporis iste! Atque ducimus, illo odio nihil tenetur amet perspiciatis quaerat qui, inventore, pariatur aspernatur.
+    </p>
+    </div>
+</body>
+</html>

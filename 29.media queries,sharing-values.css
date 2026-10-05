@@ -1,0 +1,65 @@
+/*MEDIA QUERIES*/
+/* Media queries allow you to apply different styles for different screen sizes or devices */
+
+/*
+syntax-
+ When the browser is at least 600px and above 
+@media screen and (min-width: 600px) {
+  .element {
+    ( Apply some styles) 
+  }
+}
+
+ex-
+ .gfg {
+            color: black;
+            font-size: 20px;
+            padding: 10px;
+        }
+        @media screen and (max-width: 800px) {
+            .gfg {
+                color: blue;
+                font-size: 18px;
+            }
+        }
+        @media screen and (max-width: 500px) {
+            .gfg {
+                color: green;
+                font-size: 16px;
+                text-align: center;
+            }
+        }
+
+
+(Viewports between 320px and 480px wide )
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  .card {
+    background: #bada55;
+  }
+}
+
+
+
+/*SHARING VALUE-*/
+/* You can share values between different media queries using CSS custom properties (variables) */
+:root {
+  --main-color: blue;
+  --padding-size: 10px;
+}
+.element {
+  color: var(--main-color);
+  padding: var(--padding-size);
+}
+@media screen and (max-width: 600px) {
+  :root {
+    --main-color: red;
+    --padding-size: 5px;
+  }
+}
+.element {
+  color: var(--main-color);
+  padding: var(--padding-size);
+}
+/* In this example, the --main-color and --padding-size variables are defined in the :root selector, making them globally accessible. When the screen width is 600px or less, the values of these variables are updated, allowing you to change styles dynamically based on the viewport size. */
+/* Note: Media queries and CSS custom properties are widely supported in modern browsers. However, always check for compatibility if you're targeting older browsers. */
+

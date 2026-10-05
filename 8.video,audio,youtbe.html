@@ -1,0 +1,109 @@
+<!--VIDEO-->
+
+<!--The HTML <video> element is used to show a video on a web page.
+-->
+    <video src="" controls>   </video>
+               or
+<video controls="controls">
+<source src="video_filename" type="video_type">
+ </video>
+
+ <!--
+ Attribute	Description
+controls	Adds playback controls such as play, pause, volume, etc.
+width	Specifies the width of the video player.
+height	Specifies the height of the video player.
+autoplay	Automatically starts playing the video when it's loaded.
+muted	Mutes the video by default.
+src	Specifies the video file’s path.
+type	Defines the format of the video (e.g., video/mp4, video/webm).
+ 
+ -->
+
+<!-- Add muted after autoplay to let your video start playing automatically (but muted):-->
+
+<video width="320" height="240" autoplay muted>
+  <source src="movie.mp4" type="video/mp4">
+  <source src="movie.ogg" type="video/ogg">
+Your browser does not support the video tag.
+</video>
+
+<!--The autoplay, loop, and muted attributes ensure the video plays automatically,
+ repeats indefinitely, and starts without sound, respectively.-->
+
+ <!--AUDIO-->
+    <audio>
+		<source src=
+        "https://media.geeksforgeeks.org/wp-content/uploads/20241009180552641558/sample-12s.mp3" type="audio/mp3">
+		<source src="" type="audio/ogg">
+	</audio>
+ <!--The HTML <audio> element is used to play an audio file on a web page.
+    Functionality of HTML Audio
+The controls attribute adds play, pause, and volume controls to the audio player.
+The autoplay attribute makes the audio play automatically when the page loads.
+The loop attribute makes the audio play continuously, repeating the file.
+The src attribute defines the URL of the audio file.
+The muted attribute silences the audio when the page loads.
+HTML Audio Media Types
+The mp3 file format with media type audio/mpeg.
+The ogg file format with media type audio/ogg.
+The wav file format with media type audio/wav.
+ -->
+
+ <audio controls autoplay>
+		<source src=
+"https://media.geeksforgeeks.org/wp-content/uploads/20241009180552641558/sample-12s.mp3" type="audio/mpeg">
+	</audio>
+
+<!--YOUTUBE VIDEOS-->
+
+<!--
+YouTube will display an id (like tgbNymZ7vqY), when you save (or play) a video.
+
+You can use this id, and refer to your video in the HTML code.
+
+To play your video on a web page, do the following:
+
+Upload the video to YouTube
+Take a note of the video id
+Define an <iframe> element in your web page
+Let the src attribute point to the video URL
+Use the width and height attributes to specify the dimension of the player
+Add any other parameters to the URL (see below)
+
+-->
+<iframe width="420" height="315"
+src="https://www.youtube.com/embed/tgbNymZ7vqY">
+</iframe>
+
+<!--Add mute=1 after autoplay=1 to let your video start playing automatically (but muted).
+-->
+<iframe width="420" height="315"
+src="https://www.youtube.com/embed/tgbNymZ7vqY?autoplay=1&mute=1">
+</iframe>
+
+<!--YouTube Playlist
+A comma separated list of videos to play (in addition to the original URL).
+
+YouTube Loop
+Add playlist=videoID and loop=1 to let your video loop forever.
+
+loop=0 (default) - The video will play only once.
+
+loop=1 - The video will loop (forever).
+-->
+<iframe width="420" height="315"
+src="https://www.youtube.com/embed/tgbNymZ7vqY?playlist=tgbNymZ7vqY&loop=1">
+</iframe>
+
+<!--YouTube Controls
+Add controls=0 to NOT display controls in the video player.
+
+controls=0 - Player controls does not display.
+
+controls=1 (default) - Player controls is displayed.
+
+YouTube - Controls-->
+<iframe width="420" height="315"
+src="https://www.youtube.com/embed/tgbNymZ7vqY?controls=0">
+</iframe>

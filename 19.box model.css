@@ -1,0 +1,115 @@
+/*BOX-MODEL 
+
+This box calculates the element's dimensions and position relative to its parent or the root <html> element, ensuring accurate layout and spacing.
+
+Content: The area where text or other content is displayed.
+Padding: Space between the content and the element's border.
+Border: A frame that wraps around the padding and content.
+Margin: Space between the element's border and neighbouring elements.
+
+can refer to the image(1)
+*/
+
+/*
+Key components of the box model
+Each element in the box model is made up of distinct layers that define its size and spacing on a web page.
+
+1. Content Area
+The content area is the central part of the CSS box model, containing the main content (e.g., text, images, videos, or elements like <p> or <span>).
+
+The content edge refers to the four edges of the content area.
+Left content edge
+Right content edge
+Top content edge
+Bottom content edge
+
+2. Padding Area
+The padding area is the space between the content and the border of an element.
+The padding area contributes to the element's total dimensions.
+
+3. Border Area
+The area that marks the end of an element is called as the border it is the outer fencing for the element.
+The border area also add 's up to the complete height and width of the element.
+The more the border width the more will be the height or width of the element.
+
+4. Margin Area
+The area outside the border of an element is called the margin area.
+Basically this area depends on the parent of the element.
+The distance between the border of the parent element and the border of the child element is called as the margin.
+
+Box Sizing Property in CSS
+There are two type's of box-sizing properties in CSS
+
+1. Content-Box(default property)
+When the user set's the value of the box-sizing property for an element as content-box or even if user do not 
+set's it ,it remains by default as content-box and in the actual height and width of the element the dimensions 
+of the content area as well as the padding area is added to constitute the final dimensions of the element.
+
+Ex-
+*/
+div {
+    height: 20px;
+    width: 20px;
+    box-sizing: content-box;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-left: 5px solid red;
+    border-right: 5px solid red;
+}
+
+/*
+Content Area (Width) :The width of the content area is fixed at 200px.
+
+Padding-
+Total padding width: 20px + 20px = 40px
+
+Border-
+Line Width of Border: 0.4px (the width of the line itself)
+Area of Border: 1.6px (the actual space the border occupies visually)
+Border width for both sides: 1.6px (left) + 1.6px (right) = 3.2px
+
+Total Width-
+Formula for Total Width = (Padding-Left + Padding-Right + Border-Area-Left + Border-Area-Right) + Content Area Width
+Total Width = (20px + 20px + 1.6px + 1.6px) + 200px = 243.2px
+The total width of the element becomes 243.2px.
+
+The reason the total width is increased unexpectedly is because box-sizing: content-box applies the width to the content area only
+
+
+2. Border-Box
+When the box-sizing property is set as border-box the actual dimensions of the element's remains same as that 
+of the actual dimensions set by the user. The difference it makes is just that the size of the content area get's 
+altered in a manner so that it could accommodate the padding area and the border area so the resultant could be
+equal to the actual dimensions entered by the user.
+
+Ex-
+*/
+div {
+    height: 20px;
+    width: 70px;
+    box-sizing:border-box;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-left: 2px solid red;
+    border-right: 2px solid red;
+}
+/*
+
+Width of Border and Padding Border width : 0.4px (line width) and 1.6px + 1.6px = 3.2px (total border area).
+
+Padding width : 20px + 20px = 40px.
+
+User-Entered Width : The width entered by the user is 200px, which applies to the content area only when box-
+sizing: content-box is used.
+
+Box-Sizing Behavior :The box-sizing: content-box property adds the padding and border outside the content area, 
+causing the total width to increase.
+
+Adjusting Content Area Width : To ensure the total width remains 200px, the extra width from padding and borders 
+(40px + 3.2px = 43.2px) is subtracted from the total width.
+
+New content area width : 200px - 43.2px = 156.8px.
+
+Final Width Calculation : The final total width is: 156.8px (content area) + 40px (padding) + 3.2px (border) = 200px, ensuring the user’s entered width remains unchanged.
+Use Case's of CSS Box Model
+*/

@@ -1,0 +1,268 @@
+/*TEXT- FORMATTING
+CSS text formatting is used to style and control the appearance of text on a webpage. It allows you to change the font, size, color, spacing, and alignment of text, helping make web content more readable and visually appealing.
+*/
+/*
+
+1. COLOR-
+The color property in CSS is used to set the color of the text content of an element. 
+You can specify colors using various formats, including named colors, hexadecimal values, RGB, RGBA, HSL, and HSLA.
+
+*/
+h1 {
+  color: green;
+}
+
+h2 {
+  color: red;
+}
+
+/*
+2.TEXT-ALIGN-
+This property aligns the text in an element at a specific position. Also it aligns the text on basis of it's writing
+direction with properties like start and end it means to the start and end of the container in which it is written.
+
+Syntax-
+
+element{
+    text-align: left| right |center | justify |start | end | initial | inherit;
+}
+*/
+h2 {
+  text-align: left;
+}
+
+h3 {
+  text-align: right;
+}
+
+/*
+3.TEXT-ALIGN-LAST -
+The text-align-last property in CSS is used to specify how the last line of a block or a line right before a 
+forced line break is aligned when text-align is set to justify.
+The text-align-last property specifies how to align the last line of a text.
+
+This property can have one of the following values:
+
+auto - Default value. The last line is justified and aligned left
+left - The last line is aligned to the left
+right - The last line is aligned to the right
+center - The last line is center-alignedt
+justify - The last line is justified as the rest of the lines
+start - The last line is aligned at the start of the line
+end - The last line is aligned at the end of the line
+
+*/
+p.a {
+  text-align-last: right;
+}
+
+p.b {
+  text-align-last: center;
+}
+/*
+4.TEXT-DECORATION-
+It is a shorthand property for the following individual properties:
+
+text-decoration-line
+text-decoration-color
+text-decoration-style
+text-decoration-thickness
+
+a)-TEXT-DECORATION-LINE-
+The CSS text-decoration-line property sets the type of decoration line added to the text.
+
+This property can have one or more of the following values:
+none - Default value. Displays no decoration line
+underline - The decoration line is displayed under the text
+overline - The decoration line is displayed over the text
+line-through - The decoration line is displayed through the text
+Tip: You can combine multiple values, like overline and underline to display lines both over and under a text.
+
+*/
+h1 {
+  text-decoration-line: overline;
+}
+
+h2 {
+  text-decoration-line: line-through;
+}
+
+/*
+b)-TEXT-DECORATION-COLOR-
+The CSS text-decoration-color property is used to set the color of the decoration line.
+*/
+h1 {
+  text-decoration-line: overline;
+  text-decoration-color: red;
+}
+
+h3 {
+  text-decoration-line: underline;
+  text-decoration-color: green;
+}
+
+/*
+c)-TEXT-DECORATION-STYLE-
+The CSS text-decoration-style property is used to set the style of the decoration line.
+
+This property can have one of the following values:
+solid - Default value. Displays the line as a single line
+double - Displays the line as a double line
+dotted - Displays the line as a dotted line
+dashed - Displays the line as a dashed line
+wavy - Displays the line as a wavy line
+none-
+*/
+h1 {
+  text-decoration-line: underline;
+  text-decoration-style: solid;
+}
+
+h2 {
+  text-decoration-line: underline;
+  text-decoration-style: double;
+}
+
+/*
+d)-TEXT-DECORATION-THICKNESS-
+The CSS text-decoration-thickness property is used to set the thickness of the decoration line.
+*/
+h1 {
+  text-decoration-line: underline;
+  text-decoration-thickness: auto;
+}
+
+h2 {
+  text-decoration-line: underline;
+  text-decoration-thickness: 5px;
+}
+
+h3 {
+  text-decoration-line: underline;
+  text-decoration-thickness: 25%;
+}
+
+/*
+5.TEXT-INDENT-
+The CSS text-indent property is used to specify the indentation of the first line in a text-block.
+
+Tip: Negative values are allowed. The first line will be indented to the left if the value is negative.
+*/
+p {
+  text-indent: 50px;
+}
+
+/*
+6.LETTER-SPACING-
+The CSS letter-spacing property is used to specify the space between the characters in a text.
+
+Tip: Negative values are allowed.
+*/
+h1 {
+  letter-spacing: 5px;
+}
+
+h2 {
+  letter-spacing: -2px;
+}
+
+/*
+7.TEXT-TRANSFORM-
+The CSS text-transform property is used to control the capitalization of text in an element.
+
+This property can have one of the following values:
+none - No transformation. Text renders as it is
+capitalize - Transforms the first character of each word to uppercase
+uppercase - Transforms all characters to uppercase
+lowercase - Transforms all characters to lowercase
+*/
+p.uppercase {
+  text-transform: uppercase;
+}
+
+p.lowercase {
+  text-transform: lowercase;
+}
+
+/*
+8.WORD-SPACING-
+The CSS word-spacing property is used to specify the space between the words in a text.
+Tip: Negative values are allowed.
+*/
+p.one {
+  word-spacing: 10px;
+}
+
+p.two {
+  word-spacing: -2px;
+}
+/*
+9.WHITE-SPACE-
+The white-space property in CSS is used to control how whitespace inside an element is handled. 
+It determines whether text wraps, collapses spaces, or preserves line breaks. Here's a quick overview of its values:
+
+Common Values of white-space
+
+normal (default):
+Collapses multiple spaces into one.
+Text wraps to the next line when necessary.
+
+nowrap:
+Collapses spaces but prevents text wrapping.
+Content stays on a single line unless manually broken.
+
+pre:
+Preserves all spaces and line breaks exactly as written in the HTML.
+Text does not wrap.
+
+pre-wrap:
+Preserves spaces and line breaks.
+Allows text to wrap when necessary.
+
+pre-line:
+Collapses multiple spaces into one.
+Preserves line breaks but allows text wrapping.
+*/
+p {
+  white-space: nowrap; /* Prevents text wrapping */
+}
+
+pre {
+  white-space: pre; /* Preserves spaces and line breaks */
+}
+
+div {
+  white-space: pre-wrap; /* Preserves spaces, line breaks, and wraps text */}
+
+/*
+10. LINE-HEIGHT-
+
+The line-height property defines the space between lines of text. Increasing line height improves readability, especially for long paragraphs.
+
+Syntax:
+line-height: value;
+*/ 
+p {
+    line-height: 1.5; /* 1.5 times the font size */
+}
+
+/*
+11.TEXT-SHADOW-
+The text-shadow property adds shadow to text.
+In its simplest use, you only specify the horizontal and the vertical shadow.
+In addition, you can add a shadow color and blur effect.
+
+Horizontal and vertical shadow:*/
+h1 {
+  text-shadow: 2px 2px;
+}
+
+/*Horizontal and vertical shadow, with color:*/
+h1 {
+  text-shadow: 2px 2px red;
+}
+
+/*Horizontal and vertical shadow, with color and blur effect:*/
+h1 {
+  text-shadow: 2px 2px 5px red;
+}

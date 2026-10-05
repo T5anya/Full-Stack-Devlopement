@@ -1,0 +1,17 @@
+/*VARIABLES*/
+/*CSS variables (custom properties) are reusable values defined with two dashes (--) that make your 
+CSS code efficient and easier to maintain.
+Store values like colors, sizes, or fonts in one place for centralized updates.
+Use var() to apply these variables anywhere in your CSS.
+Improve code readability and consistency across your styles.
+
+*/
+:root {
+    --main-bg-color: lightblue;
+    --main-text-color: darkblue;
+    }
+    body {
+        background-color: var(--main-bg-color);
+        color: var(--main-text-color);
+    }
+

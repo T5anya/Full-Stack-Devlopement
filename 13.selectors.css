@@ -1,0 +1,425 @@
+/*SELECTORS*/
+
+
+/*
+CSS selectors are used to "find" (or select) the HTML elements you want to style.
+
+We can divide CSS selectors into five categories:
+
+Simple selectors (select elements based on name, id, class)
+Combinator selectors (select elements based on a specific relationship between them)
+Pseudo-class selectors (select elements based on a certain state)
+Pseudo-elements selectors (select and style a part of an element)
+Attribute selectors (select elements based on an attribute or attribute value)
+
+ 1.
+ Universal Selector (*): Selects all elements on the page and applies the same style universally
+
+ * {
+            color: red;
+        }
+
+ 2.
+ Element Selector: Targets all elements of a specific type, such as paragraphs or headers.
+ ex- setting a common font size for all paragraphs
+]
+        p {
+            font-size: 16px;
+        }
+        
+ 3.
+  Class Selector (.): Applies styles to elements with a specific class attribute. 
+  For instance, making all buttons have a blue background.
+
+        .button {
+            background-color: blue;
+            color: white;
+        }
+        <body>
+            <button class="button">Click Me!</button>
+        </body>
+
+ 4.
+ ID Selector (#): Styles a single element identified by its unique id. 
+ For example, changing the background color of a header.
+
+        #header {
+            background-color: gray;
+        }
+        <body>
+            <div id="header">this is heading</div>
+        </body>
+
+ 5.
+ Grouping Selector - Applies the same style to multiple elements. 
+ Same style can be applied on different elements with the help of grouping.
+
+       h1,h2,h3{
+        font-family: sans-serif;
+        font-size: 25px;
+        color: green;
+       }
+
+ 6.
+  Descendant Selectors: Targets an element inside another, 
+  such as paragraphs inside div .For example, styling paragraphs inside a div.
+
+        div p {
+            color: red;
+        }
+        <body>
+            <div>
+                <p>This paragraph inside a div will be red.</p>
+            </div>
+        </body>
+    
+ 7.
+ Child Selectors -CSS child selector selects all the direct children of a particular element. 
+ This is denoted by '>' (Greater than) symbol. 
+ It will not select elements that are further nested inside the child elements.
+
+ In this example, we are changing the text color of the direct child element of div element. 
+ The para element inside the span tag remains unchanged as it is not a direct child of the div element.
+    .myDiv > p {
+            color: #04af2f;
+        }
+<body>
+    <div class="myDiv">
+        <p>It is a paragraph element. Direct child of div element.</p>
+        <span><p>This is a p element inside div but not direct child of div.</p></span>        
+    </div>
+    <p>This is a p element outside div.</p>    
+</body>
+
+ 8.
+ Adjacent Sibling Selector (+): Styles an element immediately following another .For example, making the first paragraph bold after an h1.
+
+        h1+p {
+            font-weight: bold;
+        }
+    <body>
+        <h1>This is a header.</h1>
+        <p>This is immediately following the header and is bold.</p>
+        <p>This will not be bold.</p>
+    </body>
+ 
+ 9.
+  General Sibling Selector (~): Styles all siblings that follow a specific element. For example, italicizing all paragraphs following an h1.
+
+        h1~p {
+            font-style: italic;
+        }
+    <body>
+        <h1>This is a header.</h1>
+        <p>This is a sibling of the header and will be italicized.</p>
+        <p>This will also be italicized because it's a sibling of the header.</p>
+    </body>
+
+ 10.
+ General Sibling Selectors in CSS - CSS general sibling selector ( "~" ) selects all the elements that are 
+ siblings of a specified element sharing the same parent. 
+ It will select all matching siblings, not just the one immediately following. 
+ 
+ In this example, we have used general sibling selector to change the text color of 
+ all p elements that are immediate siblings of the div element.
+
+ div{
+         border: 2px solid #031926;
+      }
+      div ~ p {
+         color: #04af2f;
+      }
+ <body>
+      <p>
+         This paragraph is above the div 
+         and will not be blue
+      </p>
+      <div>
+         <p>
+            This paragraph is inside a div 
+            and will not be blue.
+         </p>
+      </div>
+      <p>
+         This paragraph 1 after the div 
+         and will be blue.
+      </p>
+      <p>This paragraph 2 after the 
+         div and will be blue.
+      </p>
+ </body>
+
+ 11.
+ Adjacent Sibling Selectors in CSS - CSS adjacent sibling selector or next sibling selector 
+ selects an element that is immediately after another element. 
+ It is used to select only those elements which immediately follow the first selector. 
+ Both elements should share the same parent.
+ 
+ In this example, the style is applied only to the p element which is just after the div element. 
+ The other p elements remain unaffected.
+
+ div{
+         border: 2px solid #031926;
+      }
+      div + p {
+         color: #04af2f;
+      }
+ <body>
+      <p>
+         This paragraph is above the div 
+         and will not be green.
+      </p>
+      <div>
+         <p>
+            This paragraph is inside a div 
+            and will not be green..
+         </p>
+      </div>
+      <p>
+         This paragraph 1 after the div 
+         and will be green..
+      </p>
+      <p>This paragraph 2 after the 
+         div and will not be green..
+      </p>
+ </body>
+
+ 12.
+  Presence Selector: It selects elements that contain a specific attribute. For example, styling all inputs with a type attribute.
+
+        input[type] {
+            border: 2px solid black;
+        }
+ <body>
+    <input type="text" placeholder="Text input">
+    <input type="number" placeholder="Number input">
+ </body>
+
+ 13. Attribute Value Selector: It targets elements with a particular attribute value. For example, styling text inputs.
+
+    <style>
+        input[type="text"] {
+            background-color: yellow;
+        }
+ 
+ <body>
+    <input type="text" placeholder="Text input">
+    <input type="password" placeholder="Password input">
+ </body>
+
+ 14. Substring Matching(^=): It matches elements where the attribute contains a substring. 
+ For example, styling links with https in their href.
+
+        a[href^="https"] {
+            color: green;
+        }
+ 
+ <body>
+    <a href="https://example.com/">Secure link</a>
+    <a href="http://example.com/">Non-secure link</a>
+ </body>
+
+ 15. Wildcard Selector (*=): Matches elements where the attribute value contains a specific string. For example, underlining links with example in the URL.
+
+    <style>
+        a[href*="example"] {
+            text-decoration: underline;
+        }
+ <body>
+    <a href="https://example.com/">This contains 'example' and is underlined.</a>
+    <a href="https://otherlink.com">This is not underlined.</a>
+ </body>
+
+ Pseudo-Classes
+ Pseudo-classes in CSS define the special states of elements for styling-
+
+ 1.
+  :hover: Styles elements when the user hovers over them. For example, changing the color of a link when hovered.
+
+        a:hover {
+            color: red;
+        }
+ <body>
+    <a href="https://example.com/">Hover over this to see the effect.</a>
+ </body>
+
+ 2.
+ :focus:  Applies styles when an element (like an input field) is focused .When a user clicks or tabs into an input field, the border changes to green and the outline is removed.
+
+        input:focus {
+            border: 2px solid green;
+            outline: none;
+        }
+​
+        input {
+            border: 1px solid gray;
+            padding: 5px;
+            width: 200px;
+        }
+ <body>
+    <input type="text" placeholder="Click to focus...">
+ </body>
+
+ 3.
+ :first-child: Styles the element which is the first child of it's parent.
+    p:first-child {
+        color: brown;
+    }
+ <body>
+    <div>
+        <p>Hello1</p>
+        <p>Hello2</p>
+    </div>
+ </body>
+
+ 4. 
+ :last-child: Style's the element which is the last child of it's parent.
+    p:last-child {
+        color:green;
+    }
+ <body>
+    <div>
+        <p>Hello1</p>
+        <p>Hello2</p>
+    </div>
+ </body>
+
+ 5. 
+ :not: Helps to remove a particular element from the styling index or styling context.
+    p:not(.one) {
+    <!--Driver Code Ends-->
+        color: blue;
+    }
+ <body>
+    <div>
+  <!--Driver Code Starts-->
+        <p class="one">Hello1</p>
+        <p class="two">Hello2</p>
+    </div>
+ </body>
+
+ 6.
+ :nth-child()-: Targets elements based on their position in a parent element. Alternates the background color of list items, creating a striped effect.
+
+        li:nth-child(odd) {
+            background-color: #f0f0f0;
+        }
+​
+        li:nth-child(even) {
+            background-color: #ffffff;
+        }
+​
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+​
+        li {
+            padding: 10px;
+        }
+ <body>
+    <ul>
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+        <li>Item 4</li>
+        <li>Item 5</li>
+    </ul>
+ </body>
+
+ 7.
+ :visited –:Styles links that the user has already clicked .Changes the color of links that the user has already visited to purple.
+
+        a:visited {
+            color: purple;
+        }
+​
+        a {
+            color: blue;
+            text-decoration: none;
+            font-size: 18px;
+        }
+ <body>
+    <p><a href="https://example.com/" target="_blank">Visit Example.com</a></p>
+ </body>
+
+ 8.
+ ::before –: Inserts content before an element .Adds a red arrow emoji before every <h1>.
+
+        h1::before {
+            content: " ";
+            color: red;
+        }
+ <body>
+    <h1>Welcome</h1>
+ </body>
+
+ 9.
+ ::after –: Inserts content after an element. Appends " (Read more)" to every paragraph.
+
+    <style>
+        p::after {
+            content: " (Read more)";
+            color: blue;
+        }
+ ​ 
+ <body>
+    <p>Paragraph-1</p>
+    <p>Paragraph-2</p>
+    <p>Paragraph-3</p>
+    <p>Paragraph-4</p>
+    <p>Paragraph-5</p>
+ </body>
+
+
+ 10.
+ ::first-letter – : Styles the first letter of a block of text.
+
+        p::first-letter {
+            font-size: 100px;
+            color: red;
+        }​  
+        p {
+            color: green;
+        }
+ <body>
+    <p>welcome to GFG</p>
+ </body>
+this code enlarges the first letter of the paragraph which is w in this case.
+
+ 11.
+ ::first-line –: Styles the first line of a block of text. Makes the first line bold and uppercase.
+
+        p::first-line {
+            font-size: 30px;
+            font-family: sans-serif;
+            font-weight: 900;
+        }
+​
+        p {
+            color: green;
+        }
+ <body>
+    <p>A CSS ruleset is various affirmations to various pieces or elements of the document.
+      The objective is to apply a bunch of properties for certain distinct qualities to a solitary
+      or a particular arrangement of components in the connected HTML page. </p>
+ </body>
+
+ ​12.
+ ::placeholder –: Styles the placeholder text in input fields. Changes the appearance of placeholder text in input fields.
+
+        input::placeholder {
+            color: gray;
+            font-style: italic;
+            font-size: 12px;
+            font-weight: 900;
+        }
+
+        input {
+            height: 50px;
+            width: 200px;
+        }
+ <body>
+    <input type="text" placeholder="Enter your name here please">
+ </body>
+*/

@@ -1,0 +1,187 @@
+/*GRIDS
+refer to img 3.png
+
+Container-
+1-
+.container {
+  display: grid | inline-grid;
+}
+
+2-
+
+container {
+  grid-template-columns: ...  ...;
+   e.g. 
+      1fr 1fr
+      minmax(10px, 1fr) 3fr
+      repeat(5, 1fr)
+      50px auto 100px 1fr
+  
+  grid-template-rows: ... ...;
+   e.g. 
+      min-content 1fr min-content
+      100px 1fr max-content
+  
+}
+
+.container {
+  grid-template-columns: [first] 40px [line2] 50px [line3] auto [col4-start] 50px [five] 40px [end];
+  grid-template-rows: [row1-start] 25% [row1-end row2-start] 100px [third-line] auto [last-line];
+}
+
+.container {
+  grid-template-columns: repeat(3, 20px [col-start]);
+}
+  equals
+.container {
+  grid-template-columns: 20px [col-start] 20px [col-start] 20px [col-start];
+}
+
+
+3-
+.container {
+  grid-template-areas: 
+    "<grid-area-name> | . | none | ..."
+    "...";
+}
+
+ex-
+.item-a {
+  grid-area: header;
+}
+.item-b {
+  grid-area: main;
+}
+.item-c {
+  grid-area: sidebar;
+}
+.item-d {
+  grid-area: footer;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 50px 50px 50px 50px;
+  grid-template-rows: auto;
+  grid-template-areas: 
+    "header header header header"
+    "main main . sidebar"
+    "footer footer footer footer";
+}
+
+4-
+.container {
+  grid-template: none | <grid-template-rows> / <grid-template-columns>;
+}
+
+.container {
+  grid-template:
+    [row1-start] "header header header" 25px [row1-end]
+    [row2-start] "footer footer footer" 25px [row2-end]
+    / auto 50px auto;
+}
+    equals
+.container {
+  grid-template-rows: [row1-start] 25px [row1-end row2-start] 25px [row2-end];
+  grid-template-columns: auto 50px auto;
+  grid-template-areas: 
+    "header header header" 
+    "footer footer footer";
+}
+
+5-
+.container {
+     standard 
+  column-gap: <line-size>;
+  row-gap: <line-size>;
+
+     old 
+  grid-column-gap: <line-size>;
+  grid-row-gap: <line-size>;
+}
+
+6-
+.container {
+   standard 
+  gap: <grid-row-gap> <grid-column-gap>;
+
+   old 
+  grid-gap: <grid-row-gap> <grid-column-gap>;
+}
+
+7-
+.container {
+  justify-items: start | end | center | stretch;
+}
+
+8-
+.container {
+  align-items: start | end | center | stretch;
+}
+
+9-
+.container {
+  justify-content: start | end | center | stretch | space-around | space-between | space-evenly;    
+}
+ This property aligns the grid along the inline (row) axis (as opposed to align-content which aligns the grid 
+ along the block (column) axis).
+
+10-
+.container {
+  align-content: start | end | center | stretch | space-around | space-between | space-evenly;    
+}
+This property aligns the grid along the block (column) axis (as opposed to justify-content which aligns the grid 
+along the inline (row) axis).
+
+Child-
+
+1-
+.item {
+  grid-column-start: <number> | <name> | span <number> | span <name> | auto;
+  grid-column-end: <number> | <name> | span <number> | span <name> | auto;
+  grid-row-start: <number> | <name> | span <number> | span <name> | auto;
+  grid-row-end: <number> | <name> | span <number> | span <name> | auto;
+}
+
+ex-
+.item-b {
+  grid-column-start: 1;
+  grid-column-end: span col4-start;
+  grid-row-start: 2;
+  grid-row-end: span 2;
+}
+
+2-
+.item {
+  grid-column: <start-line> / <end-line> | <start-line> / span <value>;
+  grid-row: <start-line> / <end-line> | <start-line> / span <value>;
+}
+
+.item-c {
+  grid-column: 3 / span 2;
+  grid-row: third-line / 4;
+}
+
+3-
+.item {
+  justify-self: start | end | center | stretch;
+}
+
+4-
+.item {
+  align-self: start | end | center | stretch;
+}
+
+
+/AUTO-FILL/
+
+The auto-fill property fills the grid with as many columns as it can fit within the available space.
+grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+
+/AUTO-FIT/
+
+The auto-fit property behaves similarly to auto-fill but with one key difference: it collapses empty columns. This 
+means that if there are fewer items than columns, the empty columns will not take up space, and the remaining 
+columns will expand to fill the available space.
+
+grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
